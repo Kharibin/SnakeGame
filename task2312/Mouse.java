@@ -4,5 +4,18 @@ package com.javarush.task.task23.task2312;
  * Created by Java on 12.07.2017.
  */
 public class Mouse {
-    int x, y;
+    private int x, y;
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public Mouse(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
 }
