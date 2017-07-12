@@ -1,6 +1,6 @@
 package com.javarush.task.task23.task2312;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Java on 12.07.2017.
@@ -25,4 +25,22 @@ public class Snake {
     public void setDirection(SnakeDirection direction) {
         this.direction = direction;
     }
+
+    public Snake(int x, int y) {
+        this.sections = new ArrayList<SnakeSection>();
+        this.sections.add(new SnakeSection(x, y));
+        this.isAlive = true;
+
+    }
+
+    public int getX(){
+        return sections.get(0).getX();
+    }
+
+    public int getY(){
+        return sections.get(0).getY();
+    }
+
+    void move(){}
+
 }
