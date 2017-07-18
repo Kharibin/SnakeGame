@@ -1,7 +1,5 @@
 package com.javarush.task.task23.task2312;
 
-import java.util.Objects;
-
 public class SnakeSection {
     private int x;
     private int y;
@@ -23,17 +21,20 @@ public class SnakeSection {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof SnakeSection)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+
         SnakeSection that = (SnakeSection) o;
-        return x == that.x &&
-                y == that.y;
+
+        if (x != that.x) return false;
+        if (y != that.y) return false;
+
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y);
+        int result = x;
+        result = 31 * result + y;
+        return result;
     }
-
-
-
 }
